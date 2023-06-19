@@ -22,7 +22,7 @@ SwingingLight.prototype.initialize = function() {
     this.glowPos = new pc.Vec3();
 
     this.cameraPos = new pc.Vec3();
-    this.app.on('cameramove', function (cameraPos) {
+    this.listen(this.app, 'cameramove', function (cameraPos) {
         this.cameraPos.copy(cameraPos);
     }, this);
 

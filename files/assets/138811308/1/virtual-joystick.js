@@ -9,17 +9,17 @@ VirtualJoystick.attributes.add('disableEvent', { type: 'string' });
 VirtualJoystick.prototype.initialize = function() {
     var app = this.app;
 
-    app.on(this.enableEvent, function (x, y) {
+    this.listen(app, this.enableEvent, function (x, y) {
         this.entity.setLocalPosition(x, -y, 0);
         this.stick.setLocalPosition(x, -y, 0);
 
         this.entity.element.enabled = true;
         this.stick.element.enabled = true;
     }, this);
-    app.on(this.moveEvent, function (x, y) {
+    this.listen(app, this.moveEvent, function (x, y) {
         this.stick.setLocalPosition(x, -y, 0);
     }, this);
-    app.on(this.disableEvent, function () {
+    this.listen(app, this.disableEvent, function () {
         this.entity.element.enabled = false;
         this.stick.element.enabled = false;
     }, this);

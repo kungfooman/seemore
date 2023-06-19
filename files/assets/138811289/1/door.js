@@ -19,7 +19,7 @@ Door.prototype.postInitialize = function() {
     var hingeConstraint = this.entity.script.hingeConstraint;
     this.limits = hingeConstraint.limits.clone();
 
-    this.app.on('cameramove', function (cameraPos) {
+    this.listen(this.app, 'cameramove', function (cameraPos) {
         cameraToDoor.sub2(cameraPos, doorPos);
         if (cameraToDoor.length() > 5) {
             var limits = hingeConstraint.limits;

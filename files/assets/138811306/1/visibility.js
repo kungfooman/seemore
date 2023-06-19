@@ -13,7 +13,7 @@ Visibility.prototype.initialize = function() {
     }
     
     var camToCenter = new pc.Vec3();
-    this.app.on('cameramove', function (cameraPos) {
+    this.listen(this.app, 'cameramove', function (cameraPos) {
         camToCenter.sub2(cameraPos, this.aabb.center);
         var dist = camToCenter.length();
         if (dist < this.cullDistance && !room.model.enabled) {
