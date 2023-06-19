@@ -43,3 +43,4 @@ var loadModules = function (modules, urlPrefix, doneCallback) { // eslint-disabl
         });
     }
 };
+window.loadModules = loadModules;

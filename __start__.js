@@ -221,7 +221,7 @@
     };
 
     if (PRELOAD_MODULES.length > 0) {
-        loadModules(PRELOAD_MODULES, ASSET_PREFIX, configure);
+        window.loadModules(PRELOAD_MODULES, ASSET_PREFIX, configure);
     } else {
         configure();
     }
