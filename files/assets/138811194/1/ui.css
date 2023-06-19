@@ -1,0 +1,198 @@
+@media (min-width: 0px) {
+    @font-face {
+       font-family: Inconsolata;
+       src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/seemore/Inconsolata.otf") format("opentype");
+    }
+
+    body {
+       font-family: Inconsolata, Helvetica, Sans-Serif;
+       font-size: 12px;
+       color: white;
+       line-height: 1.5;
+        
+       -webkit-touch-callout: none;
+       -webkit-user-select: none;
+       -khtml-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+    }
+
+    strong {
+       font-size: 12px;
+       opacity: 0.75;
+       display: block;
+    }
+
+    .menu {
+       position: absolute;
+       top: 16px;
+       left: 16px;
+    }
+
+    @supports(padding: max(0px)) {
+        .menu {
+            padding-top: max(0px, env(safe-area-inset-top));
+            padding-left: max(0px, env(safe-area-inset-left));
+        }
+    }    
+    
+    .menu > .info {
+       background-color: rgb(91, 112, 115);
+       padding: 7px 10px;
+       margin-bottom: 20px;
+       width: 190px;
+    }
+
+    .menu > .stats {
+       margin-bottom: 20px;
+       width: 210px;
+    }
+
+    .menu > .stats > .stat {
+       padding: 7px 10px;
+       background-color: rgba(91, 112, 115, 0.5);
+       margin-bottom: 2px;
+    }
+
+    .menu > .options {
+       margin-bottom: 20px;
+    }
+
+    .menu > .options .option {
+       padding-left: 7px;
+       height: 32px;
+       line-height: 32px;
+       background-color: rgba(91, 112, 115, 0.5);
+       margin-bottom: 5px;
+       width: 203px;
+    }
+
+    .menu > .options .option:hover {
+       cursor: pointer;
+       background-color: rgba(91, 112, 115, 0.75);
+    }
+
+    .menu > .options > .checked {
+       background-color: rgb(91, 112, 115);
+    }
+
+    .menu > .options > .render-mode {
+       position: relative;
+       background-color: rgb(91, 112, 115);
+    }
+
+    .menu > .options > .checked:after {
+       content: url("check.png");
+       float: right;
+       width: 32px;
+       height: 32px;
+    }
+
+    .menu > .options .dropdown {
+       position: absolute;
+       top: 0;
+       right: -105%;
+    }
+
+    .menu > .buttons {
+       margin-bottom: 20px;
+       white-space: nowrap;
+    }
+
+    .button {
+       display: inline-block;
+       background-color: rgba(91, 112, 115, 0.5);
+       margin-right: 10px;
+       width: 42px;
+       height: 42px;
+       vertical-align: top;
+    }
+
+    .button.checked {
+       background-color: rgb(91, 112, 115);
+    }
+
+    .button > img {
+       opacity: 0.5;
+    }
+
+    .button:hover {
+       background-color: rgba(91, 112, 115, 0.75);
+       cursor: pointer;
+    }
+
+    .button:hover > img {
+       opacity: 1;
+    }
+
+    .button.checked > img {
+       opacity: 1;
+    }
+
+    .button.info {
+       background-color: transparent;
+       width: 54px;
+       height: 54px;
+       padding: 0;
+    }
+
+    .top-right {
+       position: absolute;
+       top: 16px;
+       right: 5px;
+    }
+
+    .logo {
+       position: absolute;
+       bottom: 16px;
+       left: 16px;
+    }
+
+    .logo img {
+       width: 90px;
+    }
+
+    @supports(padding: max(0px)) {
+        .logo {
+            padding-top: max(0px, env(safe-area-inset-top));
+            padding-left: max(0px, env(safe-area-inset-left));
+        }
+    }    
+    
+    .social {
+       position: absolute;
+       top: 0;
+       left: 220px;
+    }
+    .social > .share {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: 4px 4px;
+        background-color: rgb(91, 112, 115);
+        opacity: 0.5;
+        margin-bottom: 5px;
+    }
+    .social > .share:hover {
+        opacity: 1;
+    }
+    .social > .share.fb {
+        background-image: url("facebook.png");
+    }
+    .social > .share.fb:hover {
+        background-image: url("facebook.png");
+    }
+    .social > .share.tw {
+        background-image: url("twitter.png");
+    }
+    .social > .share.tw:hover {
+        background-image: url("twitter.png");
+    }
+
+    .hidden {
+       display: none;
+    }
+}

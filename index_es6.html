@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <style></style>
+  <title>Seemore</title>
+</head>
+<body>
+  <script type="importmap">
+    {
+      "imports": {
+        "playcanvas": "/playcanvas-engine/build/playcanvas.dbg.mjs/index.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import * as pc from 'playcanvas';
+    window.pc = pc;
+    async function main() {
+      await import("./__settings__.js");
+      await import("./__modules__.js");
+      await import("./__start__.js");
+      await import("./__loading__.js");
+    }
+    window.onload = main;
+  </script>
+</body>
+</html>

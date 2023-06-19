@@ -1,0 +1,59 @@
+<div class="menu">
+    <div class="buttons">
+        <div class="button info" id="info-button">
+            <img src="playcanvas.png"></img></div>
+        <div class="button" id="options-button">
+            <img src="menu.png"></img>
+        </div>
+        <div class="button" id="stats-button">
+            <img src="stats.png"></img>
+        </div>
+        <div class="button" id="share-button">
+            <img src="share.png"></img>
+        </div>
+        <div class="social hidden" id="share">
+            <div class="share tw" id="twitter-button"></div>
+            <div class="share fb" id="facebook-button"></div>
+        </div>
+    </div>
+
+    <div class="info hidden" id="info">
+        <strong>INFO</strong>Made with PlayCanvas, the open source game engine with a collaborative cloud-based toolset. Specially optimized for ARM Mali based devices.
+    </div>
+
+    <div class="options hidden" id="options">
+        <div class="option render-mode" id="render-mode">
+            Render Mode: Final Image
+            <div class="dropdown hidden" id="dropdown">
+                <div class="option" id="final-image">Final Image</div>
+                <div class="option" id="albedo">Albedo</div>
+                <div class="option" id="diffuse">Diffuse/Refraction</div>
+                <div class="option" id="reflection">Reflection</div>
+                <div class="option" id="specularity">Specularity/Fresnel</div>
+            </div>
+        </div>
+        <div class="option checked" id="gamma-correction">Gamma Correction</div>
+        <div class="option checked" id="tone-mapping">Tone Mapping</div>
+        <div class="option checked" id="specular-aa">Specular A/A</div>
+    </div>
+
+    <div class="stats hidden" id="stats">
+        <div class="stat" id="fps">FPS: 0</div>
+        <div class="stat" id="draw-calls">Draw Calls: 0</div>
+        <div class="stat" id="shadow-draw-calls">Shadow Draw Calls: 0</div>
+        <div class="stat" id="texture-vram">Texture VRAM: 0MB</div>
+    </div>
+</div>
+
+<div class="top-right">
+    <div class="button" id="fullscreen-button">
+        <img src="fullscreen.png"></img>
+    </div>
+    <div class="button" id="camera-button">
+        <img src="controller.png"></img>
+    </div>
+</div>
+
+<div class="logo">
+    <img src="arm.png"></img>
+</div>
