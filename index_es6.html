@@ -9,10 +9,14 @@
   <title>Seemore</title>
 </head>
 <body>
+  <!--
+        "playcanvas": "/playcanvas-engine/build/playcanvas.dbg.mjs/index.js"
+        "playcanvas": "/playcanvas-engine-review/src/index.js"
+  -->
   <script type="importmap">
     {
       "imports": {
-        "playcanvas": "/playcanvas-engine/build/playcanvas.dbg.mjs/index.js"
+        "playcanvas": "/playcanvas-engine-review/src/index.js"
       }
     }
   </script>
@@ -26,6 +30,14 @@
       await import("./__loading__.js");
     }
     window.onload = main;
+    function reloadScene() {
+      const { scenes } = pc.app;
+      const currentScene = scenes._list.find(scene => scene.loaded);
+      scenes.changeScene(currentScene);
+    }
+    Object.assign(window, {
+      reloadScene
+    });
   </script>
 </body>
 </html>
