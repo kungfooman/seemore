@@ -44,33 +44,19 @@ DemoLoader.prototype.initialize = function() {
     }.bind(this));
 };
 
+/**
+ * @param {string} room 
+ * @param {Function} done 
+ */
 DemoLoader.prototype.loadRoom = function (room, done) {
     var app = this.app;
     var assetRegistry = app.assets;
     var assets = assetRegistry.findByTag(room.toLowerCase());
-    assets = assets.filter(function (asset) {
-        return !asset.loaded;
-    });
-    if (assets.length === 0) {
-        done();
-    }
-    var count = 0;
-
-    var _onLoad = function (asset) {
-        count++;
-
-        if (count === assets.length) {
-            app.root.findByName(room).enabled = true;
-            if (done) {
-                done();
-            }
-        }
-    };
-
-    assets.forEach(function (asset) {
-        asset.once("load", _onLoad);
-        assetRegistry.load(asset);
-    });
+    var assetListLoader = new pc.AssetListLoader(assets, assetRegistry);
+    assetListLoader.load(() => {
+        app.root.findByName(room).enabled = true;
+        done?.();
+    })
 };
 
 DemoLoader.prototype.fixupMaterials = function () {
