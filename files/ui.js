@@ -44,6 +44,7 @@ Ui.prototype.createCss = function () {
     
     // Update the CSS every time it's saved in the code editor
     this.css.on('load', function() {
+        console.log("LOAD EVENT ON ASSET")
         this.fixUp();
         style.innerHTML = this.fixedCss;
     }, this);
@@ -57,6 +58,7 @@ Ui.prototype.createHtml = function () {
 
     // Update the HTML every time it's saved in the code editor
     this.html.on('load', function() {
+        console.log("LOAD EVENT ON ASSET CREATEHTML")
         this.fixUp();
         div.innerHTML = this.fixedHtml;
         this.initUi();
